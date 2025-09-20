@@ -526,178 +526,6 @@ function initProjectModals() {
     }
 }
 
-// Achievement modals - Fixed implementation
-function initAchievementModals() {
-    const achievements = {
-        achievement1: {
-            title: 'Barclays Hack-o-Hire Winner',
-            organization: 'Barclays',
-            date: '2024',
-            type: 'hackathon',
-            description: 'First place in national hackathon competition, earned internship opportunity',
-            fullDescription: `
-                <p>Won first place in the prestigious Barclays Hack-o-Hire national hackathon competition, competing against over 500 teams from across the country. This achievement led to securing an internship opportunity with Barclays.</p>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Project Details:</h4>
-                <ul style="line-height: 1.8; color: var(--color-text-secondary);">
-                    <li>Built a fintech solution for digital payments</li>
-                    <li>Implemented advanced fraud detection algorithms</li>
-                    <li>Created user-friendly mobile and web interfaces</li>
-                    <li>Presented to senior Barclays executives</li>
-                    <li>Completed in 48 hours with a team of 4</li>
-                </ul>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Recognition:</h4>
-                <p style="color: var(--color-text-secondary); line-height: 1.8;">The project was praised for its innovative approach to solving real-world banking challenges and its potential for commercial implementation.</p>
-            `,
-            skills: ['React', 'Node.js', 'Machine Learning', 'API Development', 'UI/UX Design']
-        },
-        achievement2: {
-            title: 'HTB Community Leader',
-            organization: 'Hack The Box',
-            date: '2024',
-            type: 'leadership',
-            description: 'Active organizer and leader in Hack The Box Chennai chapter',
-            fullDescription: `
-                <p>Serving as an active community leader for the Hack The Box Chennai chapter, organizing events, workshops, and CTF competitions for cybersecurity enthusiasts in the region.</p>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Responsibilities:</h4>
-                <ul style="line-height: 1.8; color: var(--color-text-secondary);">
-                    <li>Organized monthly CTF workshops and training sessions</li>
-                    <li>Mentored 50+ students in cybersecurity fundamentals</li>
-                    <li>Coordinated with international HTB community</li>
-                    <li>Led team in multiple national CTF competitions</li>
-                    <li>Developed training materials and challenges</li>
-                </ul>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Impact:</h4>
-                <p style="color: var(--color-text-secondary); line-height: 1.8;">Successfully grew the Chennai chapter from 20 to over 200 active members, creating a thriving cybersecurity community in the region.</p>
-            `,
-            skills: ['Leadership', 'Event Organization', 'Cybersecurity', 'Community Building', 'Public Speaking']
-        },
-        achievement3: {
-            title: 'Cybersecurity Certification',
-            organization: 'SANS Institute',
-            date: '2023',
-            type: 'certification',
-            description: 'Completed advanced cybersecurity course with distinction',
-            fullDescription: `
-                <p>Successfully completed the SANS GIAC Security Essentials (GSEC) certification with distinction, demonstrating comprehensive knowledge in cybersecurity fundamentals and advanced threat analysis.</p>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Course Coverage:</h4>
-                <ul style="line-height: 1.8; color: var(--color-text-secondary);">
-                    <li>Network security and intrusion detection</li>
-                    <li>Incident response and digital forensics</li>
-                    <li>Cryptography and secure communications</li>
-                    <li>Vulnerability assessment and penetration testing</li>
-                    <li>Risk management and compliance</li>
-                </ul>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Achievement:</h4>
-                <p style="color: var(--color-text-secondary); line-height: 1.8;">Scored in the top 10% of candidates globally and received recognition for outstanding performance in the practical exercises.</p>
-            `,
-            skills: ['Network Security', 'Digital Forensics', 'Risk Assessment', 'Compliance', 'Threat Analysis']
-        },
-        achievement4: {
-            title: 'CTF Competition Winner',
-            organization: 'Various Platforms',
-            date: '2023-2024',
-            type: 'competition',
-            description: 'Multiple wins in various Capture The Flag competitions',
-            fullDescription: `
-                <p>Achieved consistent success in various Capture The Flag (CTF) competitions across multiple platforms, demonstrating expertise in diverse cybersecurity domains.</p>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Notable Wins:</h4>
-                <ul style="line-height: 1.8; color: var(--color-text-secondary);">
-                    <li>PicoCTF 2024 - Top 50 globally (out of 10,000+ participants)</li>
-                    <li>HTB University CTF - 1st place in India</li>
-                    <li>ISITDTU CTF 2023 - 3rd place internationally</li>
-                    <li>BSides Delhi CTF - 1st place</li>
-                    <li>Multiple online CTF platforms - Regular top 10 finishes</li>
-                </ul>
-                
-                <h4 style="color: #FFD700; margin: 1.5rem 0 1rem 0;">Specializations:</h4>
-                <p style="color: var(--color-text-secondary); line-height: 1.8;">Particularly strong in web exploitation, cryptography, and reverse engineering challenges. Known for creative problem-solving and innovative attack vectors.</p>
-            `,
-            skills: ['Web Exploitation', 'Cryptography', 'Reverse Engineering', 'Binary Exploitation', 'Digital Forensics']
-        }
-    };
-    
-    const modal = document.getElementById('achievement-modal');
-    const modalBody = document.getElementById('achievement-modal-body');
-    
-    window.openAchievementModal = function(achievementId) {
-        console.log('Opening achievement modal for:', achievementId); // Debug log
-        const achievement = achievements[achievementId];
-        if (!achievement) {
-            console.error('Achievement not found:', achievementId);
-            return;
-        }
-        if (!modal) {
-            console.error('Achievement modal element not found');
-            return;
-        }
-        if (!modalBody) {
-            console.error('Achievement modal body element not found');
-            return;
-        }
-        
-        modalBody.innerHTML = `
-            <h2 style="color: #FFD700; font-family: 'Orbitron', monospace; margin-bottom: 0.5rem;">${achievement.title}</h2>
-            <p style="color: var(--color-text-secondary); margin-bottom: 1rem; font-weight: 500;">${achievement.organization} - ${achievement.date}</p>
-            <div style="margin-bottom: 1.5rem;">
-                <span class="achievement-type type-${achievement.type}" style="margin-bottom: 1rem; display: inline-block;">${achievement.type.charAt(0).toUpperCase() + achievement.type.slice(1)}</span>
-            </div>
-            <div style="color: var(--color-text-secondary); line-height: 1.8;">
-                ${achievement.fullDescription}
-            </div>
-            <div style="margin: 2rem 0;">
-                <h4 style="color: #FFD700; margin-bottom: 1rem;">Skills Demonstrated:</h4>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                    ${achievement.skills.map(skill => `<span class="tech-tag">${skill}</span>`).join('')}
-                </div>
-            </div>
-        `;
-        
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-        
-        // Focus trap for accessibility
-        const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        if (focusableElements.length > 0) {
-            focusableElements[0].focus();
-        }
-    };
-    
-    window.closeAchievementModal = function() {
-        console.log('Closing achievement modal'); // Debug log
-        if (!modal) return;
-        modal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    };
-    
-    // Close modal when clicking overlay
-    if (modal) {
-        const overlay = modal.querySelector('.modal-overlay');
-        if (overlay) {
-            overlay.addEventListener('click', window.closeAchievementModal);
-        }
-    }
-    
-    // Close modal on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (modal && !modal.classList.contains('hidden')) {
-                window.closeAchievementModal();
-            }
-            const projectModal = document.getElementById('project-modal');
-            if (projectModal && !projectModal.classList.contains('hidden')) {
-                window.closeProjectModal();
-            }
-        }
-    });
-}
-
 // Make scrollToSection globally available
 window.scrollToSection = scrollToSection;
 
@@ -865,4 +693,150 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+});
+
+// Achievement cards hover effects
+// Achievement data with images
+const achievementsData = [
+    {
+        id: 'achievement1',
+        title: 'HackNova 2025 Runner-Up',
+        organization: 'Adeptus Club SRM Easwari College - 2025',
+        description: 'Final Runner up in HackNova 25 hackathon by Adeptus Club SRM Easwari College',
+        type: 'hackathon',
+        images: [
+            'Public/adeptus-1.jpeg',
+            'Public/adeptus-2.jpeg',
+            'Public/adeptus-3.jpeg',
+        ]
+    },
+    {
+        id: 'achievement2',
+        title: 'Barclays Hack-o-Hire Finalist',
+        organization: 'Barclays - 2025',
+        description: 'Finalist in Hack-O-Hire hackathon by Barclays India and earned internship opportunity',
+        type: 'hackathon',
+        images: [
+            'Public/Barclays-1.jpg',
+            'Public/Barclays-2.jpg',
+            'Public/Barclays-3.jpg',
+        ]
+    },
+    {
+        id: 'achievement3',
+        title: 'StickyBit @ HackTheBoxChennai',
+        organization: 'HackTheBoxChennai Meetup',
+        description: 'Active organizer and member in Hack The Box Chennai meetup',
+        type: 'leadership',
+        images: [
+            'Public/HTB-1.jpg',
+            'Public/HTB-2.jpg',
+            'Public/HTB-3.jpeg',
+        ]
+    },
+    {
+        id: 'achievement4',
+        title: 'Academic Performer SRM 2025',
+        organization: 'SRM Institute of Science and Technology - 2023-2027',
+        description: 'Awarded for outstanding academic performance in the Computer Science program',
+        type: 'appreciation',
+        images: [
+            'Public/Medal-1.jpeg',
+            'Public/Medal-2.jpeg',
+            'Public/Medal-1.jpeg'
+        ]
+    },
+    {
+        id: 'achievement5',
+        title: 'Ultron 8.0 Hackathon Winner',
+        organization: 'Organized by Futurix Club SRM in 2025',
+        description: 'First Hackathon win for developing an innovative solution using IOT powered health monitoring system and ML model',
+        type: 'hackathon',
+        images: [
+            'Public/Ultron1.jpg',
+            'Public/Ultron2.jpg',
+            'Public/Ultron3.jpg'
+        ]
+    },
+    {
+        id: 'achievement6',
+        title: 'Ignite 25 Hackathon Winner',
+        organization: 'Organized by SRM Easwari College in 2025',
+        description: 'Hackathon won for developing CitiVoice, an AI-powered citizen helpline app using Flutter and GenAI',
+        type: 'hackathon',
+        images: [
+            'Public/ignite-1.jpeg',
+            'Public/ignite-2.jpeg',
+            'Public/ignite-3.jpeg'
+        ]
+    }
+];
+
+// Initialize Infinite Achievement Slider (Lun Dev Style)
+function initInfiniteAchievementSlider() {
+    const list = document.getElementById('achievements-list');
+    if (!list) return;
+
+    // Create achievement items with position variables
+    achievementsData.forEach((achievement, index) => {
+        const item = createAchievementItem(achievement, index + 1);
+        list.appendChild(item);
+    });
+}
+
+// Create individual achievement item
+function createAchievementItem(achievement, position) {
+    const item = document.createElement('div');
+    item.className = 'achievement-item';
+    item.style.setProperty('--position', position);
+    item.setAttribute('data-achievement-id', achievement.id);
+
+    // Create image container with auto-scrolling images
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'image-container';
+
+    const imageScroll = document.createElement('div');
+    imageScroll.className = 'image-scroll';
+
+    // Add images to scroll container
+    achievement.images.forEach(imageSrc => {
+        const imageItem = document.createElement('div');
+        imageItem.className = 'image-item';
+        imageItem.style.backgroundImage = `url(${imageSrc})`;
+        imageScroll.appendChild(imageItem);
+    });
+
+    imageContainer.appendChild(imageScroll);
+
+    // Create content container
+    const content = document.createElement('div');
+    content.className = 'content';
+
+    content.innerHTML = `
+        <div>
+            <h3 class="title">${achievement.title}</h3>
+            <div class="organization">${achievement.organization}</div>
+            <p class="description">${achievement.description}</p>
+        </div>
+        <span class="type type-${achievement.type}">${achievement.type}</span>
+    `;
+
+    item.appendChild(imageContainer);
+    item.appendChild(content);
+
+    return item;
+}
+
+// Add to your existing DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    initLoadingScreen();
+    initNavbar();
+    initMobileMenu();
+    initSmoothScrolling();
+    initTypingAnimation();
+    initParticles();
+    initScrollAnimations();
+    initContactForm();
+    initProjectModals();
+    initInfiniteAchievementSlider();
 });
