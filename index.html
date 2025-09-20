@@ -3,156 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitthal Choudhary's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Mr. Choudhary</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Progress bar -->
-    <div class="progress-bar" id="progressBar"></div>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="batman-symbol">
+            <div class="symbol-glow"></div>
+            🦇
+        </div>
+        <div class="loading-text">INITIATING...</div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">RG</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+            <div class="nav-logo">
+                <span class="batman-symbol-nav">🦇</span>
+                <span class="logo-text">PORTFOLIO</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">PROJECTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">SKILLS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#achievements" class="nav-link">ACHIEVEMENTS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
-    <header>
-        <div class="particles" id="particles"></div>
-        <div class="container">
-            <h1>Vitthal Choudhary</h1>
-            <h2>Aspiring Computer Science & Engineering Professional | Innovator | AI & Machine Learning Enthusiast</h2>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="particles" id="particles"></div>
+            <div class="city-silhouette"></div>
         </div>
-    </header>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="Vitthal Choudhary">Vitthal Choudhary</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span id="typing-text" class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Passionate Computer Science Student specializing in Cybersecurity, 
+                    Web Development, and Competitive Programming. Ready to protect the digital world.
+                </p>
+                <div class="hero-buttons">
+                    <a class="btn btn-primary" href="Public/Resume.pdf" download>
+                        <i class="fas fa-code"></i>
+                        View Resume
+                    </a>
+                    <button class="btn btn-secondary" onclick="scrollToSection('#contact')">
+                        <i class="fas fa-paper-plane"></i>
+                        CONTACT ME
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="batman-emblem">
+                    <div class="emblem-glow"></div>
+                    🦇
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
 
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" class="about">
         <div class="container">
-            <h3><i class="fas fa-user"></i> About Me</h3>
-            <p>I am a second-year Computer Science and Engineering student with a passion for developing innovative solutions 
-                and mastering my field. I have hands-on experience in several programming languages and a growing interest 
-                in machine learning and AI.</p>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">3</div>
-                    <div>Major Projects</div>
+            <div class="section-header">
+                <h2 class="section-title">ABOUT THE GUARDIAN</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        Welcome to my digital fortress. I'm a B.Tech CSE 3rd year student at SRM University, 
+                        passionate about cybersecurity and web development. Like Batman protects Gotham, 
+                        I protect the digital realm from cyber threats.
+                    </p>
+                    <p class="about-description">
+                        Currently active in the HTB community and hackathon competitions, I specialize in 
+                        full-stack development, machine learning, and cybersecurity. My goal is to create 
+                        innovative solutions that make the digital world safer and more accessible.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="7">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="3">0</span>
+                            <span class="stat-label">Hackathons Won</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">4</div>
-                    <div>Programming Languages</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2</div>
-                    <div>Certifications</div>
+                <div class="about-visual">
+                    <img src="Public/Profile.jpg" alt="Your Photo" class="guardian-circle-avatar" />
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="dark-section">
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
         <div class="container">
-            <h3><i class="fas fa-code"></i> Skills</h3>
-            <div class="skills-grid">
-                <div>
-                    <div class="skill-item">
-                        <span class="skill-dot"></span>
-                        Programming Languages: C, C++, Python, Java
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-dot"></span>
-                        Web Development: MERN stack, Bootstrap, Tailwind, Firebase
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-dot"></span>
-                        Machine Learning: Basic knowledge, actively expanding
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-item">
-                        <span class="skill-dot"></span>
-                        App Development: Java for Android, Kotlin
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-dot"></span>
-                        Software Tools: Java Swing, Git, Firebase, OpenCV
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-dot"></span>
-                        Other Skills: Problem-solving, debugging, UI design
-                    </div>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">MISSION ARCHIVES</h2>
+                <div class="title-underline"></div>
             </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h3><i class="fas fa-project-diagram"></i> Projects</h3>
             <div class="projects-grid">
-                <div class="project-card">
-                    <h4>Face Recognition Attendance System</h4>
-                    <p>Developed an automated attendance system using facial recognition technology. The system captures, 
-                        processes, and records attendance in real-time, improving efficiency and reducing manual effort.</p>
-                    <p><strong>Technology Used:</strong> Python, OpenCV, Face Recognition Libraries</p>
+                <div class="project-card" data-category="WebApp" onclick="openProjectModal('project1')">
+                    <div class="project-image">
+                        <img src="Public/Reqaize.png" alt="ReqAize Screenshot" class="project-card-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">ReqAize</h3>
+                        <p class="project-description">
+                            Automated requirement writing tool using Generative AI to streamline Workflow in Companies.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NextJs</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">GenAi</span>
+                            <span class="tech-tag">TailWindCSS</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">OAuth 2.0</span>
+                            <span class="tech-tag">Jira</span>
+                        </div>
+                        <div class="project-status status-live">Live</div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h4>Crop Residue Solution Web App</h4>
-                    <p>A web platform created to educate farmers on air pollution impacts, link them with bio-pellet plants, 
-                        and streamline crop residue sales and distribution.</p>
-                    <p><strong>Technology Stack:</strong> MERN stack, Firebase, Python</p>
+
+                <div class="project-card" data-category="web" onclick="openProjectModal('project2')">
+                    <div class="project-image">
+                        <img src="Public/Portfolio.png" alt="Portfolio Website Screenshot" class="project-card-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-description">
+                            Batman-themed responsive portfolio with advanced animations
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-status status-live">Live</div>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h4>Lab Assistant Software</h4>
-                    <p>A desktop application that accesses and analyzes blood test results, recognizing patterns 
-                        and potential disease markers based on blood parameters.</p>
-                    <p><strong>Technology Used:</strong> Java Swing, Java</p>
+
+                <div class="project-card" data-category="Desktop" onclick="openProjectModal('project3')">
+                    <div class="project-image">
+                        <img src="Public/Lab_Assist.png" alt="Lab Assist" class="project-card-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Lab Assist</h3>
+                        <p class="project-description">
+                            Data Visualization for Medical Lab Reports for better understanding and analysis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Java GUI</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">JDBC</span>
+                        </div>
+                        <div class="project-status status-live">Completed</div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="Mobile" onclick="openProjectModal('project4')">
+                    <div class="project-image">
+                        <img src="Public/CitiVoice.jpg" alt="AI-Based Citizen Helpline" class="project-card-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Citi Voice</h3>
+                        <p class="project-description">
+                            CitiVoice - AI-Based Citizen Helpline, for all types of emergency services.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">IOT ESP-32</span>
+                            <span class="tech-tag">Generative AI - LLMs</span>
+                            <span class="tech-tag">Maps API</span>
+                        </div>
+                        <div class="project-status status-live">Completed</div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="Mobile" onclick="openProjectModal('project5')">
+                    <div class="project-image">
+                        <img src="Public/BioSync.png" alt="BioSync" class="project-card-img" />
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">BioSync</h3>
+                        <p class="project-description">
+                            BioSync - AI powered IOT application to predict future diseases using Machine Learning.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">ESP-32</span>
+                            <span class="tech-tag">Raspberry-PI</span>
+                            <span class="tech-tag">Generative AI - LLMs</span>
+                            <span class="tech-tag">Encrypted Database</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-status status-live">Completed</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title skills-main-title">
+                    <span class="technical-text">TECHNICAL</span> 
+                    <span class="skills-text">SKILLS</span>
+                </h2>
+                <div class="title-underline skills-underline"></div>
+                <p class="skills-subtitle">
+                    A comprehensive overview of my technical expertise and the tools I use to build modern applications.
+                </p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card"><div class="skill-icon">🖥️</div><h3 class="skill-name">C</h3></div>
+                <div class="skill-card"><div class="skill-icon">⚡</div><h3 class="skill-name">C++</h3></div>
+                <div class="skill-card"><div class="skill-icon">🐍</div><h3 class="skill-name">Python</h3></div>
+                <div class="skill-card"><div class="skill-icon">☕</div><h3 class="skill-name">Java</h3></div>
+                <div class="skill-card"><div class="skill-icon">🔶</div><h3 class="skill-name">HTML</h3></div>
+                <div class="skill-card"><div class="skill-icon">🖌️</div><h3 class="skill-name">TailwindCSS</h3></div>
+                <div class="skill-card"><div class="skill-icon">🧠</div><h3 class="skill-name">JavaScript</h3></div>
+                <div class="skill-card"><div class="skill-icon">🕸️</div><h3 class="skill-name">NextJs</h3></div>
+                <div class="skill-card"><div class="skill-icon">🔵</div><h3 class="skill-name">TypeScript</h3></div>
+                <div class="skill-card"><div class="skill-icon">📱</div><h3 class="skill-name">Kotlin</h3></div>
+                <div class="skill-card"><div class="skill-icon">🦋</div><h3 class="skill-name">Flutter</h3></div>
+                <div class="skill-card"><div class="skill-icon">🐧</div><h3 class="skill-name">Kali Linux</h3></div>
+                <div class="skill-card"><div class="skill-icon">🛡️</div><h3 class="skill-name">DFIR</h3></div>
+                <div class="skill-card"><div class="skill-icon">🦈</div><h3 class="skill-name">Wireshark</h3></div>
+                <div class="skill-card"><div class="skill-icon">🗺️</div><h3 class="skill-name">Nmap</h3></div>
+                <div class="skill-card"><div class="skill-icon">💀</div><h3 class="skill-name">Autopsy</h3></div>
+                <div class="skill-card"><div class="skill-icon">🕵️</div><h3 class="skill-name">FTK Imager</h3></div>
+                <div class="skill-card"><div class="skill-icon">🌐</div><h3 class="skill-name">Burpsuite</h3></div>
+                <div class="skill-card"><div class="skill-icon">💣</div><h3 class="skill-name">Metasploit</h3></div>
+                <div class="skill-card"><div class="skill-icon">🔓</div><h3 class="skill-name">Penetration Testing</h3></div>
+                <div class="skill-card"><div class="skill-icon">👨‍💻</div><h3 class="skill-name">Bash Scripting</h3></div>
+                <div class="skill-card"><div class="skill-icon">🛢️</div><h3 class="skill-name">MySql</h3></div>
+                <div class="skill-card"><div class="skill-icon">🧩</div><h3 class="skill-name">DSA</h3></div>
+                <div class="skill-card"><div class="skill-icon">🌶️</div><h3 class="skill-name">Flask</h3></div>
+                <div class="skill-card"><div class="skill-icon">🔬</div><h3 class="skill-name">Scipy</h3></div>
+                <div class="skill-card"><div class="skill-icon">📊</div><h3 class="skill-name">Numpy</h3></div>
+                <div class="skill-card"><div class="skill-icon">🧮</div><h3 class="skill-name">Pandas</h3></div>
+                <div class="skill-card"><div class="skill-icon">📈</div><h3 class="skill-name">Matplotlib</h3></div>
+                <div class="skill-card"><div class="skill-icon">🐳</div><h3 class="skill-name">Docker</h3></div>
+                <div class="skill-card"><div class="skill-icon">📝</div><h3 class="skill-name">Git</h3></div>
+                <div class="skill-card"><div class="skill-icon">🐱</div><h3 class="skill-name">Github</h3></div>
+                <div class="skill-card"><div class="skill-icon">🎨</div><h3 class="skill-name">Figma</h3></div>
+                <div class="skill-card"><div class="skill-icon">🔥</div><h3 class="skill-name">pytorch</h3></div>
+                <div class="skill-card"><div class="skill-icon">🧠</div><h3 class="skill-name">tensorflow</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">BATTLE HONORS</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <div class="achievement-overlay">
+                            <div class="achievement-links">
+                                <button class="achievement-link" onclick="openAchievementModal('achievement1')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Barclays Hack-o-Hire Winner</h3>
+                        <p class="achievement-org">Barclays - 2024</p>
+                        <p class="achievement-desc">First place in national hackathon competition, earned internship opportunity</p>
+                        <div class="achievement-type type-hackathon">Hackathon</div>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <div class="achievement-overlay">
+                            <div class="achievement-links">
+                                <button class="achievement-link" onclick="openAchievementModal('achievement2')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">HTB Community Leader</h3>
+                        <p class="achievement-org">Hack The Box - 2024</p>
+                        <p class="achievement-desc">Active organizer and leader in Hack The Box Chennai chapter</p>
+                        <div class="achievement-type type-leadership">Leadership</div>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <div class="achievement-overlay">
+                            <div class="achievement-links">
+                                <button class="achievement-link" onclick="openAchievementModal('achievement3')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">Cybersecurity Certification</h3>
+                        <p class="achievement-org">SANS Institute - 2023</p>
+                        <p class="achievement-desc">Completed advanced cybersecurity course with distinction</p>
+                        <div class="achievement-type type-certification">Certification</div>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-image">
+                        <div class="achievement-overlay">
+                            <div class="achievement-links">
+                                <button class="achievement-link" onclick="openAchievementModal('achievement4')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">CTF Competition Winner</h3>
+                        <p class="achievement-org">Various Platforms - 2023-2024</p>
+                        <p class="achievement-desc">Multiple wins in various Capture The Flag competitions</p>
+                        <div class="achievement-type type-competition">Competition</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <h3><i class="fas fa-certificate"></i> Certifications & Learning</h3>
-            <ul class="certifications">
-                <li>
-                    <span class="skill-dot"></span>
-                    Machine Learning Course on Coursera: Expanding my ML skills.
-                </li>
-                <li>
-                    <span class="skill-dot"></span>
-                    Kotlin Programming: Currently learning Kotlin for Android development.
-                </li>
-            </ul>
+            <div class="section-header">
+                <h2 class="section-title">CONTACT THE GUARDIAN</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">Let's Connect</h3>
+                    <p class="contact-description">
+                        Ready to discuss your next project or just want to say hello? 
+                        Drop me a message,and I'll get back to you faster than Batman responds to the Bat-Signal.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>vitthal.choudahry.14@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 98765 43210</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Chennai, India</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Vitthal-choudhary" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vitthal-choudhary/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/VitthalChd" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/vitthal_choudhary_14/" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full-width">
+                            <i class="fas fa-paper-plane"></i>
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <h3><i class="fas fa-heart"></i> Interests</h3>
-            <p>I enjoy building Android applications and am currently exploring Kotlin. I'm interested in projects 
-                that push the limits of current technology and offer practical solutions, from smart automation 
-                to AI-driven user experiences.</p>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <h3><i class="fas fa-envelope"></i> Contact</h3>
-            <div class="social-links">
-                <a href="https://github.com/Vitthal-Choudhary" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/vitthal-choudhary/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:vitthal.choudhary.14@gmail.com"><i class="fas fa-envelope"></i></a>
+            <div class="footer-content">
+                <p>&copy; 2025 Mr. Choudhary. All rights reserved. Gotham's Digital Guardian.</p>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProjectModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modal-body">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Modal -->
+    <div id="achievement-modal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeAchievementModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAchievementModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="achievement-modal-body">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
