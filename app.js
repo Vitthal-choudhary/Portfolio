@@ -700,18 +700,6 @@ document.addEventListener('DOMContentLoaded', function() {
 const achievementsData = [
     {
         id: 'achievement1',
-        title: 'HackNova 2025 Runner-Up',
-        organization: 'Adeptus Club SRM Easwari College - 2025',
-        description: 'Final Runner up in HackNova 25 hackathon by Adeptus Club SRM Easwari College',
-        type: 'hackathon',
-        images: [
-            'Public/adeptus-1.jpeg',
-            'Public/adeptus-2.jpeg',
-            'Public/adeptus-3.jpeg',
-        ]
-    },
-    {
-        id: 'achievement2',
         title: 'Barclays Hack-o-Hire Finalist',
         organization: 'Barclays - 2025',
         description: 'Finalist in Hack-O-Hire hackathon by Barclays India and earned internship opportunity',
@@ -723,7 +711,7 @@ const achievementsData = [
         ]
     },
     {
-        id: 'achievement3',
+        id: 'achievement2',
         title: 'StickyBit @ HackTheBoxChennai',
         organization: 'HackTheBoxChennai Meetup',
         description: 'Active organizer and member in Hack The Box Chennai meetup',
@@ -735,7 +723,7 @@ const achievementsData = [
         ]
     },
     {
-        id: 'achievement4',
+        id: 'achievement3',
         title: 'Academic Performer SRM 2025',
         organization: 'SRM Institute of Science and Technology - 2023-2027',
         description: 'Awarded for outstanding academic performance in the Computer Science program',
@@ -747,7 +735,7 @@ const achievementsData = [
         ]
     },
     {
-        id: 'achievement5',
+        id: 'achievement4',
         title: 'Ultron 8.0 Hackathon Winner',
         organization: 'Organized by Futurix Club SRM in 2025',
         description: 'First Hackathon win for developing an innovative solution using IOT powered health monitoring system and ML model',
@@ -759,7 +747,7 @@ const achievementsData = [
         ]
     },
     {
-        id: 'achievement6',
+        id: 'achievement5',
         title: 'Ignite 25 Hackathon Winner',
         organization: 'Organized by SRM Easwari College in 2025',
         description: 'Hackathon won for developing CitiVoice, an AI-powered citizen helpline app using Flutter and GenAI',
@@ -769,7 +757,19 @@ const achievementsData = [
             'Public/ignite-2.jpeg',
             'Public/ignite-3.jpeg'
         ]
-    }
+    },
+    {
+        id: 'achievement6',
+        title: 'HackNova 2025 Runner-Up',
+        organization: 'Adeptus Club SRM Easwari College - 2025',
+        description: 'Final Runner up in HackNova 25 hackathon by Adeptus Club SRM Easwari College',
+        type: 'hackathon',
+        images: [
+            'Public/adeptus1.jpeg',
+            'Public/adeptus2.jpeg',
+            'Public/adeptus3.jpeg',
+        ]
+    },
 ];
 
 // Initialize Infinite Achievement Slider (Lun Dev Style)
