@@ -9,19 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypingAnimation();
     initParticles();
     initScrollAnimations();
-    initContactForm();
     initProjectModals();
-    initAchievementModals();
 });
 
 // Loading Screen
 function initLoadingScreen() {
     const loadingScreen = document.getElementById('loading-screen');
-    
+
     // Hide loading screen after 2 seconds
     setTimeout(() => {
         loadingScreen.classList.add('fade-out');
-        
+
         // Remove from DOM after fade out
         setTimeout(() => {
             loadingScreen.remove();
@@ -33,7 +31,7 @@ function initLoadingScreen() {
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
@@ -41,18 +39,18 @@ function initNavbar() {
         } else {
             navbar.classList.remove('scrolled');
         }
-        
+
         // Update active nav link based on scroll position
         updateActiveNavLink();
     });
-    
+
     // Add click event to nav links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
             scrollToSection(targetId);
-            
+
             // Close mobile menu if open
             const navMenu = document.getElementById('nav-menu');
             const hamburger = document.getElementById('hamburger');
@@ -68,13 +66,13 @@ function initNavbar() {
 function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
-    
+
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
-        
+
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
@@ -102,7 +100,7 @@ function scrollToSection(targetId) {
     if (targetElement) {
         const navbarHeight = 70;
         const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-        
+
         window.scrollTo({
             top: offsetTop,
             behavior: 'smooth'
@@ -114,19 +112,19 @@ function scrollToSection(targetId) {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     let currentSection = '';
     const scrollPos = window.scrollY + 100;
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
             currentSection = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${currentSection}`) {
@@ -146,14 +144,14 @@ function initTypingAnimation() {
         'Machine Learning Engineer',
         'Data Scientist'
     ];
-    
+
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    
+
     function typeText() {
         const currentText = texts[textIndex];
-        
+
         if (isDeleting) {
             typingElement.textContent = currentText.substring(0, charIndex - 1);
             charIndex--;
@@ -161,13 +159,13 @@ function initTypingAnimation() {
             typingElement.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
         }
-        
+
         let typeSpeed = 100;
-        
+
         if (isDeleting) {
             typeSpeed /= 2;
         }
-        
+
         if (!isDeleting && charIndex === currentText.length) {
             typeSpeed = 2000; // Pause at end
             isDeleting = true;
@@ -176,10 +174,10 @@ function initTypingAnimation() {
             textIndex = (textIndex + 1) % texts.length;
             typeSpeed = 500; // Pause before next text
         }
-        
+
         setTimeout(typeText, typeSpeed);
     }
-    
+
     if (typingElement) {
         typeText();
     }
@@ -189,9 +187,9 @@ function initTypingAnimation() {
 function initParticles() {
     const particlesContainer = document.getElementById('particles');
     if (!particlesContainer) return;
-    
+
     const particleCount = 50;
-    
+
     for (let i = 0; i < particleCount; i++) {
         createParticle(particlesContainer);
     }
@@ -200,22 +198,22 @@ function initParticles() {
 function createParticle(container) {
     const particle = document.createElement('div');
     particle.className = 'particle';
-    
+
     // Random size
     const size = Math.random() * 3 + 1;
     particle.style.width = size + 'px';
     particle.style.height = size + 'px';
-    
+
     // Random position
     particle.style.left = Math.random() * 100 + '%';
     particle.style.top = Math.random() * 100 + '%';
-    
+
     // Random animation delay
     particle.style.animationDelay = Math.random() * 6 + 's';
-    
+
     // Random animation duration
     particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-    
+
     container.appendChild(particle);
 }
 
@@ -225,12 +223,12 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const element = entry.target;
-                
+
                 // Animate counters
                 if (element.classList.contains('stat-number')) {
                     animateCounter(element);
                 }
-                
+
                 // Add visible class for general animations
                 element.classList.add('animate-in');
             }
@@ -239,7 +237,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     });
-    
+
     // Observe elements
     document.querySelectorAll('.stat-number, .project-card, .achievement-card, .skill-card').forEach(el => {
         observer.observe(el);
@@ -252,11 +250,11 @@ function animateCounter(element) {
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;
-    
+
     const timer = setInterval(() => {
         current += step;
         element.textContent = Math.floor(current);
-        
+
         if (current >= target) {
             element.textContent = target;
             clearInterval(timer);
@@ -264,35 +262,9 @@ function animateCounter(element) {
     }, 16);
 }
 
-// Contact form
-function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    if (!contactForm) return;
-    
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
-        
-        // Validate form
-        if (validateForm(data)) {
-            // Simulate form submission
-            showFormFeedback('success', 'Message sent successfully! I\'ll get back to you soon.');
-            contactForm.reset();
-        } else {
-            showFormFeedback('error', 'Please fill in all required fields.');
-        }
-    });
-}
-
 // Form validation
 function validateForm(data) {
-    return data.name && data.email && data.subject && data.message && 
+    return data.name && data.email && data.subject && data.message &&
            data.email.includes('@') && data.email.includes('.');
 }
 
@@ -303,7 +275,7 @@ function showFormFeedback(type, message) {
     if (existingFeedback) {
         existingFeedback.remove();
     }
-    
+
     // Create feedback element
     const feedback = document.createElement('div');
     feedback.className = `form-feedback ${type}`;
@@ -314,7 +286,7 @@ function showFormFeedback(type, message) {
         font-weight: 500;
         animation: slideInFromBottom 0.3s ease-out;
     `;
-    
+
     if (type === 'success') {
         feedback.style.background = 'rgba(0, 255, 0, 0.1)';
         feedback.style.color = '#00FF00';
@@ -324,13 +296,13 @@ function showFormFeedback(type, message) {
         feedback.style.color = '#FF6B6B';
         feedback.style.border = '1px solid rgba(255, 0, 0, 0.2)';
     }
-    
+
     feedback.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}`;
-    
+
     // Insert feedback
     const contactForm = document.getElementById('contact-form');
     contactForm.appendChild(feedback);
-    
+
     // Remove after 5 seconds
     setTimeout(() => {
         if (feedback.parentNode) {
@@ -459,10 +431,10 @@ function initProjectModals() {
             demo: null
         }
     };
-    
+
     const modal = document.getElementById('project-modal');
     const modalBody = document.getElementById('modal-body');
-    
+
     // Make functions global and ensure they work
     window.openProjectModal = function(projectId) {
         console.log('Opening project modal for:', projectId); // Debug log
@@ -479,7 +451,7 @@ function initProjectModals() {
             console.error('Modal body element not found');
             return;
         }
-        
+
         modalBody.innerHTML = `
             <h2 style="color: #FFD700; font-family: 'Orbitron', monospace; margin-bottom: 1rem;">${project.title}</h2>
             <div style="margin-bottom: 1.5rem;">
@@ -499,24 +471,24 @@ function initProjectModals() {
                 <a href="${project.github}" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> View Code</a>
             </div>
         `;
-        
+
         modal.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
-        
+
         // Focus trap for accessibility
         const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
         if (focusableElements.length > 0) {
             focusableElements[0].focus();
         }
     };
-    
+
     window.closeProjectModal = function() {
         console.log('Closing project modal'); // Debug log
         if (!modal) return;
         modal.classList.add('hidden');
         document.body.style.overflow = 'auto';
     };
-    
+
     // Close modal when clicking overlay
     if (modal) {
         const overlay = modal.querySelector('.modal-overlay');
@@ -533,14 +505,14 @@ window.scrollToSection = scrollToSection;
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('btn') || e.target.closest('.btn')) {
         const btn = e.target.classList.contains('btn') ? e.target : e.target.closest('.btn');
-        
+
         // Create ripple effect
         const ripple = document.createElement('div');
         const rect = btn.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
-        
+
         ripple.style.cssText = `
             position: absolute;
             width: ${size}px;
@@ -553,11 +525,11 @@ document.addEventListener('click', function(e) {
             animation: ripple 0.6s linear;
             pointer-events: none;
         `;
-        
+
         btn.style.position = 'relative';
         btn.style.overflow = 'hidden';
         btn.appendChild(ripple);
-        
+
         setTimeout(() => {
             ripple.remove();
         }, 600);
@@ -591,7 +563,7 @@ function addScrollProgress() {
         box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     `;
     document.body.appendChild(progressBar);
-    
+
     window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -618,17 +590,17 @@ const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓
 
 document.addEventListener('keydown', function(e) {
     konamiCode.push(e.keyCode);
-    
+
     if (konamiCode.length > konamiSequence.length) {
         konamiCode.shift();
     }
-    
-    if (konamiCode.length === konamiSequence.length && 
+
+    if (konamiCode.length === konamiSequence.length &&
         konamiCode.every((code, index) => code === konamiSequence[index])) {
-        
+
         // Easter egg activated!
         document.body.style.filter = 'invert(1) hue-rotate(180deg)';
-        
+
         const message = document.createElement('div');
         message.style.cssText = `
             position: fixed;
@@ -650,7 +622,7 @@ document.addEventListener('keydown', function(e) {
             <small>You found the secret! Press ESC to return to normal.</small>
         `;
         document.body.appendChild(message);
-        
+
         const resetEasterEgg = (e) => {
             if (e.key === 'Escape') {
                 document.body.style.filter = 'none';
@@ -659,9 +631,9 @@ document.addEventListener('keydown', function(e) {
                 konamiCode = [];
             }
         };
-        
+
         document.addEventListener('keydown', resetEasterEgg);
-        
+
         setTimeout(() => {
             if (message.parentNode) {
                 document.body.style.filter = 'none';
@@ -675,7 +647,7 @@ document.addEventListener('keydown', function(e) {
 // Skills section hover effects
 document.addEventListener('DOMContentLoaded', function() {
     const skillCards = document.querySelectorAll('.skill-card');
-    
+
     skillCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             // Add subtle glow effect to neighboring cards
@@ -685,7 +657,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
-        
+
         card.addEventListener('mouseleave', function() {
             // Remove glow effect
             skillCards.forEach(otherCard => {
@@ -836,7 +808,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypingAnimation();
     initParticles();
     initScrollAnimations();
-    initContactForm();
     initProjectModals();
     initInfiniteAchievementSlider();
 });
