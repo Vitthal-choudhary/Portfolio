@@ -741,9 +741,9 @@ const achievementsData = [
         description: 'First Hackathon win for developing an innovative solution using IOT powered health monitoring system and ML model',
         type: 'hackathon',
         images: [
-            'Public/Ultron1.jpg',
-            'Public/Ultron2.jpg',
-            'Public/Ultron3.jpg'
+            'Public/Ultron1.png',
+            'Public/Ultron2.png',
+            'Public/Ultron3.png'
         ]
     },
     {
